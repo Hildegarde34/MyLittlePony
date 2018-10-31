@@ -1,0 +1,7 @@
+La course {{race.id}} aura lieu à {{race.location}}, le {{race.date | date:"dd/MM/yyyy"}}, avec les poneys suivants : 
+    <ul *ngIf="race.ponies.length > 1">
+        <li *ngFor="let rp of race.ponies">
+            {{rp.name}}
+        </li>
+      </ul>
+

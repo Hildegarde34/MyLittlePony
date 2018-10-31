@@ -1,0 +1,23 @@
+<h1>Entrer une nouvelle course</h1>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    Lieu<input type="text" id="location" name="location" required [(ngModel)]="model.location" />
+  </div>
+
+  <div>
+    Date<input type="date" id="date" name="date" required [(ngModel)]="model.date" />
+  </div>
+
+  Poneys<fieldset>
+    <legend>Choisis des poneys dans la liste suivante :</legend>
+
+    <div *ngFor="let p of ponies">
+      <input type="checkbox" id="ponies" name="feature" value="pony.id" checked />
+      <label>
+        {{p.name}}
+      </label>
+    </div>
+  </fieldset>
+
+  <button type="submit">Enregistrer</button>
+</form>
