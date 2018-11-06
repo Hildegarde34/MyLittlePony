@@ -4,6 +4,7 @@ import { RaceService } from '../race.service';
 import { Router } from '@angular/router';
 import { Pony } from '../pony';
 import { PonyService } from '../pony.service';
+import { PickList } from 'primeng/picklist';
 
 @Component({
   selector: 'app-race-form',
@@ -12,6 +13,8 @@ import { PonyService } from '../pony.service';
 })
 export class RaceFormComponent implements OnInit {
   model: Race;
+  dateModel;
+  pickListModel;
   ponies: Array<Pony>;
   constructor(private service: RaceService, private router: Router, private servicePony: PonyService) { 
     this.model = new Race();
@@ -21,7 +24,8 @@ export class RaceFormComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
+    this.model.date = new Date(this.dateModel.year, this.dateModel.month-1, this.dateModel.day)
     this.service.addRace(this.model);
-    this.router.navigate(['/Races'])
+    this.router.navigate(['/']);
   }
 }

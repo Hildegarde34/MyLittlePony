@@ -11,5 +11,6 @@ export class Race {
         this.location = location,
             this.date = date;
         this.ponies = [];
+        this.date = date === undefined? new Date(): date;
     }
 }

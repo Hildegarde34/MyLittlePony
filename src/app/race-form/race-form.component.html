@@ -5,19 +5,17 @@
   </div>
 
   <div>
-    Date<input type="date" id="date" name="date" required [(ngModel)]="model.date" />
+    Date<ngb-datepicker #dp [(ngModel)]="dateModel" [ngModelOptions]="{standalone: true}" ></ngb-datepicker>
   </div>
 
-  Poneys<fieldset>
-    <legend>Choisis des poneys dans la liste suivante :</legend>
-
-    <div *ngFor="let p of ponies">
-      <input type="checkbox" id="ponies" name="feature" value="pony.id" checked />
-      <label>
-        {{p.name}}
-      </label>
-    </div>
-  </fieldset>
+  <legend>Choisis des poneys dans la liste suivante :</legend>
+  <p-pickList [source]="ponies" [target]="model.ponies" dragdrop="true" [responsive]="true">
+    <ng-template let-p pTemplate="ponies">
+      <div class="ui-helper-clearfix">
+        <div>{{p.name}} - {{p.color}}</div>
+      </div>
+    </ng-template>
+  </p-pickList>
 
   <button type="submit">Enregistrer</button>
 </form>
