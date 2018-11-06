@@ -13,11 +13,11 @@ import { Pony } from '../pony';
 })
 export class RaceReactiveFormComponent implements OnInit {
 
-  ponyModel: Pony[];
-  ponies: Pony[];
+  poniesTarget: Pony[];
+  poniesSource: Pony[];
 
   raceForm = this.fb.group({
-    name: ['nom', Validators.required],
+    location: ['location', Validators.required],
     date: ['date', Validators.required],
     poniesRace: [[]]
   })
@@ -27,8 +27,8 @@ export class RaceReactiveFormComponent implements OnInit {
     private service: RaceService,
     private ponyService: PonyService,
     private router: Router){
-      this.ponyModel = [];
-      this.ponyService.getAllPonies().subscribe(v=>this.ponies=v);
+      this.poniesTarget = [];
+      this.ponyService.getAllPonies().subscribe(v=>this.poniesSource=v);
     }
  
 
@@ -37,9 +37,12 @@ export class RaceReactiveFormComponent implements OnInit {
 
   onSubmit(){
     let r: Race = this.raceForm.value;
-    r.poniesRace = this.ponyModel;
+    const dateFinal = new Date(this.raceForm.value.date.year, this.raceForm.value.date.month, this.raceForm.value.date.day);
+    r.date = dateFinal;
+    r.poniesRace = this.poniesTarget;
     console.log(r);
     this.service.addRace(r);
+    this.poniesTarget.forEach((x) => this.poniesSource.push(x)); 
     this.router.navigate(['/']);
   }
 }

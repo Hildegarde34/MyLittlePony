@@ -1,7 +1,7 @@
 <h1>Entrer une nouvelle course</h1>
 <form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
   <div>
-    Lieu<input type="text" id="location" name="location" formControlName="name" />
+    Lieu<input type="text" id="location" name="location" formControlName="location" />
   </div>
 
   <div>
@@ -9,7 +9,7 @@
   </div>
 
   <legend>Choisis des poneys dans la liste suivante :</legend>
-  <p-pickList [source]="ponies" [target]="ponyModel" [dragdrop]="true" [responsive]="true">
+  <p-pickList [source]="poniesSource" [target]="poniesTarget" [dragdrop]="true" [responsive]="true">
     <ng-template let-p pTemplate="ponies">
       <div class="ui-helper-clearfix">
         <div>{{p.name}} - {{p.color}}</div>
