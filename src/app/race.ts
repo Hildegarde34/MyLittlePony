@@ -4,7 +4,7 @@ export class Race {
     id: number;
     location: string;
     date: Date;
-    poniesRace: Array<Pony>
+    poniesRace: Array<Pony>;
 
     constructor(location?: string, date?: Date) {
         this.id = 0;

@@ -8,11 +8,11 @@ import { RaceService } from '../race.service';
   styleUrls: ['./races.component.css']
 })
 export class RacesComponent implements OnInit {
-  races: Array<Race>;
+  races: Array<Race> = [];
   constructor(private service: RaceService) {
-    this.service.getAllRaces().subscribe(r => this.races = r);}
+    }
 
-  ngOnInit() {
+  ngOnInit() {this.service.getAllRaces().subscribe(r => this.races = r);
   }
 
 }
