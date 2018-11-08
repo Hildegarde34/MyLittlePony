@@ -1,4 +1,4 @@
-<h1 *ngIf="add">Entrer un nouveau poney</h1>
+<h1 *ngIf="add">Entrez un nouveau poney</h1>
 <h1 *ngIf="!add">Modifier le poney</h1>
 <form [formGroup]="ponyForm" (ngSubmit)="onSubmit()">
   Nom<input type="text" id="name" name="name" formControlName="name" />

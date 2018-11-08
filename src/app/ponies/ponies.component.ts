@@ -10,6 +10,7 @@ import { PonyService } from '../pony.service';
 export class PoniesComponent implements OnInit {
   ponies: Array<Pony>;
 
+
   constructor(private service: PonyService) {
     this.service.getAllPonies().subscribe(p => this.ponies = p);
   }
@@ -17,6 +18,9 @@ export class PoniesComponent implements OnInit {
   ngOnInit() {
   }
 
+  deletePony(id) {
+    this.service.deletePony(id);
+  }
   
 
 }

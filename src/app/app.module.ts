@@ -17,6 +17,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PonyReactiveFormComponent } from './pony-reactive-form/pony-reactive-form.component';
 import { RaceReactiveFormComponent } from './race-reactive-form/race-reactive-form-component';
 import { PonyComponent } from './pony/pony.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { UserComponent } from './user/user.component';
+import { PonyTransformPipe } from './pony-transform.pipe';
+
+// chemins vers des constructions de pages
 
 const routes: Routes = [
   {path: '', component: RacesComponent},
@@ -24,7 +29,11 @@ const routes: Routes = [
   {path: 'getPony/:id', component: PonyComponent},
   {path: 'addPony', component: PonyReactiveFormComponent},
   {path: 'updatePony/:id', component: PonyReactiveFormComponent},
-  {path: 'addRace', component: RaceReactiveFormComponent}
+  {path: 'updateRace/:id', component: RaceReactiveFormComponent},
+  {path: 'deletePony/:id', component: PonyReactiveFormComponent},
+  {path: 'deleteRace/:id', component: RaceReactiveFormComponent},
+  {path: 'addRace', component: RaceReactiveFormComponent},
+  {path: 'connexion', component: UserFormComponent}
 ]
 
 @NgModule({
@@ -38,7 +47,10 @@ const routes: Routes = [
     RaceFormComponent,
     PonyReactiveFormComponent,
     RaceReactiveFormComponent,
-    PonyComponent
+    PonyComponent,
+    UserFormComponent,
+    UserComponent,
+    PonyTransformPipe
   ],
   imports: /* ce qui n'est pas de nous */[
     BrowserModule,

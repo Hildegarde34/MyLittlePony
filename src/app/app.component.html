@@ -6,4 +6,12 @@
     <li><a routerLink="/Ponies">Poneys</a></li>
     <li><a routerLink="/addPony">Ajouter un poney</a></li>
 </nav>
+
+<h3>Bienvenue {{identifiant}}</h3>
+<button *ngIf = "identifiant === null"
+routerLink="/connexion" type="text">Connexion</button>
+
+<button *ngIf = "identifiant !== null"
+(click) = "deconnexion()">Déconnexion</button>
+
 <router-outlet></router-outlet>

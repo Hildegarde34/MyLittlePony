@@ -31,4 +31,9 @@ export class RaceService {
   addRace(race: Race): void {
     this.http.post(this.url + '/addRace', race, this.httpOptions).subscribe(() => this.router.navigate(['/']));
   }
+
+  updateRace(id: number, race: Race): void {
+    this.http.put(this.url + '/updateRace/' + id, race, this.httpOptions).subscribe();
+  }
+
 }

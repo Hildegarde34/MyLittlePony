@@ -13,4 +13,5 @@ export class Race {
         this.poniesRace = [];
         this.date = date === undefined? new Date(): date;
     }
+
 }
