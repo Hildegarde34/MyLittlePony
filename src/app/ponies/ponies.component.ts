@@ -20,6 +20,7 @@ export class PoniesComponent implements OnInit {
 
   deletePony(id) {
     this.service.deletePony(id);
+    alert("Le poney a bien été supprimé !");
   }
   
 

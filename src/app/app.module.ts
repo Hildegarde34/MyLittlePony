@@ -20,6 +20,7 @@ import { PonyComponent } from './pony/pony.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserComponent } from './user/user.component';
 import { PonyTransformPipe } from './pony-transform.pipe';
+import { RoleComponent } from './role/role.component';
 
 // chemins vers des constructions de pages
 
@@ -50,7 +51,8 @@ const routes: Routes = [
     PonyComponent,
     UserFormComponent,
     UserComponent,
-    PonyTransformPipe
+    PonyTransformPipe,
+    RoleComponent
   ],
   imports: /* ce qui n'est pas de nous */[
     BrowserModule,

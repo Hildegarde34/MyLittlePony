@@ -2,6 +2,7 @@ La course {{race.id}} aura lieu à {{race.location}}, le {{race.date | date:"dd/
     <ul *ngIf="race.poniesRace.length > 0">
         <li *ngFor="let rp of race.poniesRace">
             {{rp.name}}
+            <button (click)="addVote(race)">+</button>
         </li>
       </ul>
 

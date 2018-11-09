@@ -40,35 +40,6 @@ export class PonyService {
   }
   
   deletePony(id: number): void {
-    
-    // let participeoupas: boolean = false;
-    
-    // this.service.getAllRaces().subscribe(// si le poney est dans la course, alors message delete, sinon message
-    //   r => {
-    //     for(let race of r)
-    //     {
-    //       for(let pony of race.poniesRace){
-    //         if (pony.id === id) {
-    //           participeoupas = true;
-    
-    //         } else {
-    //           participeoupas = false;
-    //         }
-    //       }
-    //     }
-    //     if (participeoupas === true){
-    //       for(let race of r)
-    //       {
-    //         race.poniesRace.filter((p) => p.id !== id);
-    //         this.service.updateRace(race.id, race);
-    //       }
-    //       this.http.delete(this.url + '/deletePony/' + id, this.httpOptions).subscribe(() => this.router.navigate(['']));
-    //     } else {
-    //       this.http.delete(this.url + '/deletePony/' + id, this.httpOptions).subscribe(() => this.router.navigate(['']));
-    //     }
-    
-    //   });
-    
     this.http.delete(this.url + '/deletePony/' + id, this.httpOptions).subscribe(() => this.router.navigate(['']));
   }
   
